@@ -26,10 +26,12 @@ Each string in `pages` is a path to an `.mdx` file relative to the repo root, wi
 
 <Steps>
   <Step title="Create the file">
-    Add a new `.mdx` file at the path you want. Use folders to nest pages under a path.
+    Add a new `.mdx` file at the path you want. Use folders to nest pages under
+    a path.
   </Step>
   <Step title="List it in docs.json">
-    Add the page's path to the relevant `pages` array. The order in the array sets the order in the sidebar.
+    Add the page's path to the relevant `pages` array. The order in the array
+    sets the order in the sidebar.
   </Step>
 </Steps>
 
@@ -72,13 +74,24 @@ The order of strings in `pages` is the order they appear in the sidebar. Reorder
 
 Sidebar labels come from the filename, not the page's `title` frontmatter. `connect-github.mdx` renders as **Connect GitHub** in the sidebar. To change a sidebar label, rename the file and update its path in `navigation`.
 
-<Warning>
-  Renaming a file changes its URL. Update any internal links to the page after a rename.
-</Warning>
+<Callout type="warning">
+  Renaming a file changes its URL. Update any internal links to the page after a
+  rename.
+</Callout>
 
 ## Next
 
-<CardGroup col={2}>
-  <Card title="Theme" href="/configuration/theme" icon="palette" description="Pick a preset and override the primary color." />
-  <Card title="Writing" href="/essentials/writing" icon="pencil" description="Frontmatter, markdown, code blocks, and images." />
-</CardGroup>
+<Columns cols="2">
+  <Card
+    title="Theme"
+    href="/configuration/theme"
+    icon="palette"
+    description="Pick a preset and override the primary color."
+  />
+  <Card
+    title="Writing"
+    href="/essentials/writing"
+    icon="pencil"
+    description="Frontmatter, markdown, code blocks, and images."
+  />
+</Columns>
