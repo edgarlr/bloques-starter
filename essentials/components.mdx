@@ -19,32 +19,52 @@ Highlight an aside, warning, or note in the flow of a page.
 </Callout>
 ```
 
-Available types: `info`, `warning`, `error`, `success`, `note`. Shorthand tags `<Note>`, `<Warning>`, `<Info>`, and `<Tip>` map to a fixed type.
+Available types: `info`, `warning`, `error`, `success`, `note`.
 
 ## Card
 
 A bordered tile with title, description, icon, and link.
 
-<Card title="Quickstart" href="/quickstart" icon="rocket" description="Clone this template and publish your docs in five minutes." />
+<Card
+  title="Quickstart"
+  href="/quickstart"
+  icon="rocket"
+  description="Clone this template and publish your docs in five minutes."
+/>
 
 ```mdx
-<Card title="Quickstart" href="/quickstart" icon="rocket" description="Clone this template and publish your docs in five minutes." />
+<Card
+  title="Quickstart"
+  href="/quickstart"
+  icon="rocket"
+  description="Clone this template and publish your docs in five minutes."
+/>
 ```
 
-## Card group
+## Card grid
 
-Wrap two or more cards in `<CardGroup>` for a responsive grid. Columns collapse on narrow screens.
+Wrap two or more cards in `<Columns>` for a responsive grid. Columns collapse on narrow screens.
 
-<CardGroup col={2}>
-  <Card title="Writing" href="/essentials/writing" icon="pencil" description="Markdown and frontmatter." />
-  <Card title="Navigation" href="/configuration/navigation" icon="settings" description="Group pages and order the sidebar." />
-</CardGroup>
+<Columns cols="2">
+  <Card
+    title="Writing"
+    href="/essentials/writing"
+    icon="pencil"
+    description="Markdown and frontmatter."
+  />
+  <Card
+    title="Navigation"
+    href="/configuration/navigation"
+    icon="settings"
+    description="Group pages and order the sidebar."
+  />
+</Columns>
 
 ```mdx
-<CardGroup col={2}>
+<Columns cols="2">
   <Card title="Writing" href="/essentials/writing" icon="pencil" />
   <Card title="Navigation" href="/configuration/navigation" icon="settings" />
-</CardGroup>
+</Columns>
 ```
 
 ## Steps
@@ -52,15 +72,23 @@ Wrap two or more cards in `<CardGroup>` for a responsive grid. Columns collapse 
 A numbered list of stages for walking the reader through a procedure.
 
 <Steps>
-  <Step title="Clone the repo">Use the GitHub template to create a copy in your account.</Step>
-  <Step title="Connect Bloques">Pick your new repo and the publishing branch.</Step>
+  <Step title="Clone the repo">
+    Use the GitHub template to create a copy in your account.
+  </Step>
+  <Step title="Connect Bloques">
+    Pick your new repo and the publishing branch.
+  </Step>
   <Step title="Edit content">Replace the starter pages with your own.</Step>
 </Steps>
 
 ```mdx
 <Steps>
-  <Step title="Clone the repo">Use the GitHub template to create a copy in your account.</Step>
-  <Step title="Connect Bloques">Pick your new repo and the publishing branch.</Step>
+  <Step title="Clone the repo">
+    Use the GitHub template to create a copy in your account.
+  </Step>
+  <Step title="Connect Bloques">
+    Pick your new repo and the publishing branch.
+  </Step>
   <Step title="Edit content">Replace the starter pages with your own.</Step>
 </Steps>
 ```
@@ -74,7 +102,8 @@ A collapsible section for supporting detail. Wrap accordions in `<AccordionGroup
     On every push to the publishing branch.
   </Accordion>
   <Accordion title="Where do images live?">
-    In a folder at the repo root. Reference them with a relative path from the page.
+    In a folder at the repo root. Reference them with a relative path from the
+    page.
   </Accordion>
 </AccordionGroup>
 
@@ -93,14 +122,16 @@ A multi-column layout for side-by-side content. Columns collapse to one column o
 <Columns cols="2">
   Left column content goes here.
 
-  Right column content goes here.
+Right column content goes here.
+
 </Columns>
 
 ```mdx
 <Columns cols="2">
   Left column content goes here.
 
-  Right column content goes here.
+Right column content goes here.
+
 </Columns>
 ```
 
@@ -120,7 +151,17 @@ Pick a color from `gray`, `green`, `yellow`, `red`, `orange`, `blue`. Common ico
 
 ## Next
 
-<CardGroup col={2}>
-  <Card title="Navigation" href="/configuration/navigation" icon="settings" description="Group pages, add tabs, and order the sidebar." />
-  <Card title="Theme" href="/configuration/theme" icon="palette" description="Pick a preset and override the primary color." />
-</CardGroup>
+<Columns cols="2">
+  <Card
+    title="Navigation"
+    href="/configuration/navigation"
+    icon="settings"
+    description="Group pages, add tabs, and order the sidebar."
+  />
+  <Card
+    title="Theme"
+    href="/configuration/theme"
+    icon="palette"
+    description="Pick a preset and override the primary color."
+  />
+</Columns>
