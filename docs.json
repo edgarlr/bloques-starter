@@ -13,6 +13,10 @@
     {
       "group": "Configuration",
       "pages": ["configuration/navigation", "configuration/theme"]
+    },
+    {
+      "tab": "API reference",
+      "groups": [{ "group": "Endpoints", "openapi": "api/openapi.json" }]
     }
   ],
   "navbar": [
