@@ -7,9 +7,11 @@ The `navigation` array in `docs.json` controls every entry in the sidebar, in th
 
 ## Groups
 
+this is a test
+
 A group is a labeled section in the sidebar containing a list of pages.
 
-```json title="docs.json"
+```json
 {
   "navigation": [
     {
@@ -25,11 +27,12 @@ Each string in `pages` is a path to an `.mdx` file relative to the repo root, wi
 ## Adding a page
 
 <Steps>
-  <Step title="Create the file">
+  <Step title="Create the file" icon="default">
     Add a new `.mdx` file at the path you want. Use folders to nest pages under
     a path.
   </Step>
-  <Step title="List it in docs.json">
+
+  <Step title="List it in docs.json" icon="default">
     Add the page's path to the relevant `pages` array. The order in the array
     sets the order in the sidebar.
   </Step>
@@ -39,7 +42,7 @@ Each string in `pages` is a path to an `.mdx` file relative to the repo root, wi
 
 A tab is a top-level navbar entry that contains its own groups. Use tabs when the sidebar grows past one coherent set of sections — for example, separating a product guide from an API reference.
 
-```json title="docs.json"
+```json
 {
   "navigation": [
     {
@@ -82,16 +85,7 @@ Sidebar labels come from the filename, not the page's `title` frontmatter. `conn
 ## Next
 
 <Columns cols="2">
-  <Card
-    title="Theme"
-    href="/configuration/theme"
-    icon="palette"
-    description="Pick a preset and override the primary color."
-  />
-  <Card
-    title="Writing"
-    href="/essentials/writing"
-    icon="pencil"
-    description="Frontmatter, markdown, code blocks, and images."
-  />
+  <Card title="Theme" href="/configuration/theme" cta="" icon="palette" iconColor="gray" />
+
+  <Card title="Writing" href="/essentials/writing" cta="" icon="pencil" iconColor="gray" />
 </Columns>
