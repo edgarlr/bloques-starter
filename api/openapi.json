@@ -28,29 +28,73 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/NewPost" }
+              "schema": { "$ref": "#/components/schemas/NewPost" },
+              "example": { "title": "foo", "body": "bar", "userId": 1 }
             }
           }
         },
         "responses": {
           "201": {
             "description": "Created",
-            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Post" } } }
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Post" },
+                "example": { "id": 101, "title": "foo", "body": "bar", "userId": 1 }
+              }
+            }
           }
         }
       }
     },
     "/posts/{id}": {
+      "parameters": [
+        { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+      ],
       "get": {
         "operationId": "getPost",
         "summary": "Get a post by ID",
-        "parameters": [
-          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
-        ],
         "responses": {
           "200": {
             "description": "A single post",
             "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Post" } } }
+          },
+          "404": { "description": "Not found" }
+        }
+      },
+      "patch": {
+        "operationId": "updatePost",
+        "summary": "Partially update a post",
+        "description": "Sends only the fields you want to change. Changes are faked and not persisted.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PostPatch" },
+              "example": { "title": "foo" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated post",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Post" },
+                "example": { "userId": 1, "id": 1, "title": "foo", "body": "quia et suscipit" }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      },
+      "delete": {
+        "operationId": "deletePost",
+        "summary": "Delete a post",
+        "description": "Deletions are faked and not persisted, so the resource stays available.",
+        "responses": {
+          "200": {
+            "description": "Deleted",
+            "content": { "application/json": { "schema": { "type": "object" }, "example": {} } }
           },
           "404": { "description": "Not found" }
         }
@@ -77,6 +121,16 @@
           "body": { "type": "string" }
         },
         "required": ["title"]
+      },
+      "PostPatch": {
+        "type": "object",
+        "description": "Any subset of a post's editable fields.",
+        "properties": {
+          "userId": { "type": "integer" },
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        },
+        "minProperties": 1
       }
     }
   }
