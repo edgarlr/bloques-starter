@@ -48,7 +48,13 @@
     },
     "/posts/{id}": {
       "parameters": [
-        { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": { "type": "integer" },
+          "example": 1
+        }
       ],
       "get": {
         "operationId": "getPost",
